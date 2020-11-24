@@ -8,9 +8,6 @@ let html = ''
 btns = Array.from(btns)
 function displayByName(data){
    let targetEle = event.target.value.trim()
-   if(!targetEle.length){
-      alert("true")
-   }
    let reg = new RegExp(targetEle, "ig")
    let mappedData = data.map(item=>{
       let itemSplit =item.name.trim().split(" ")
@@ -81,6 +78,7 @@ const displayNum = async()=>{
 btns.forEach(item=>{
    
    item.onclick= ()=>{
+      search.value=""
       for(let i=0; i<btns.length;i++){
       btns[i].classList.remove("mystyle")
    }
